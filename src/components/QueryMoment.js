@@ -1,5 +1,7 @@
 import "./QueryMoment.css";
 import openMic from "./Controller/mic"
+import MicRoundedIcon from '@mui/icons-material/MicRounded';
+import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import {useState} from "react";
 import {useToast} from "@chakra-ui/react";
 let started = false;
@@ -17,16 +19,19 @@ function QueryMoment() {
             toast({
                 title: `Mic is recording!`,
                 status: "success",
-                isClosable: true,
+                duration: null,
+                icon: <MicRoundedIcon/>
             })
         } else {
+            toast.closeAll();
             console.log("ended");
             setColour("slate-500");
             started = false;
             toast({
                 title: `Mic has stopped recording!`,
                 status: "warning",
-                isClosable: true,
+                duration: 1500,
+                icon: <MicOffRoundedIcon/>
             })
         }
     }

@@ -7,8 +7,10 @@ function App() {
     return (
         <ChakraProvider>
             <div className="App justify-center place-content-center py-24">
-                <Card className={"h-screen"}></Card>
-                <QueryMoment className={"mx-auto"}></QueryMoment>
+                <div>
+                    <Card className={"h-screen"}></Card>
+                    <QueryMoment className={"mx-auto"}></QueryMoment>
+                </div>
             </div>
         </ChakraProvider>
   );
