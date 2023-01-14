@@ -1,14 +1,19 @@
 .Card {
     display: flex;
     width: 100%;
+    height: max-content;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
 }
 
 .arrow-right {
     float: right;
+    scale: 2;
 }
 
 .arrow-left {
     float: left;
+    scale: 2;
 }
 
 .image {
