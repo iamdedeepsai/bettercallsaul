@@ -1,5 +1,6 @@
 import "./QueryMoment.css";
 import openMic from "./Controller/mic"
+import requestText from "./Controller/wolframalpha"
 import MicRoundedIcon from '@mui/icons-material/MicRounded';
 import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import {useState} from "react";
@@ -8,6 +9,7 @@ let started = false;
 
 function QueryMoment() {
     let [color, setColour] = useState("slate-500");
+    const [message, setMessage] = useState("");
     let toast = useToast();
 
     const clickHandler = () => {
@@ -36,10 +38,15 @@ function QueryMoment() {
         }
     }
 
+    const submitHandler = () => {
+        let text = requestText(message);
+        alert(text);
+    }
+
     return (
         <div className={"flow-root w-72 justify-center content-center mx-auto"}>
             <div className="inputbox my-6 float-left">
-                <input required="required" type="text"/>
+                <input required="required" type="text" onKeyDown={(event) => {if (event.key === "Enter") submitHandler(event.target.value)}}/>
                 <span>Ask away!</span>
                 <i></i>
             </div>
