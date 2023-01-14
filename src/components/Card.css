@@ -1,3 +1,17 @@
-.arrow {
+.Card {
+    display: flex;
+    width: 100%;
+}
 
+.arrow-right {
+    float: right;
+}
+
+.arrow-left {
+    float: left;
+}
+
+.image {
+    height: 20rem;
+    width: 20rem;
 }

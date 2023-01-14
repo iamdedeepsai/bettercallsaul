@@ -6,7 +6,7 @@ function App() {
   return (
       <ChakraProvider>
           <div className="App">
-              <Card></Card>
+              <Card className={"h-screen"}></Card>
           </div>
       </ChakraProvider>
   );
