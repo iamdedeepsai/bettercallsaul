@@ -6,6 +6,8 @@ function ActorView(props) {
     let effect = "";
     if (props.waiting) effect = "glitch ";
 
+    //todo: Show glitch when loading
+
     return (
         <div className={"grid grid-cols-1"}>
             <div className="glitch-wrapper">

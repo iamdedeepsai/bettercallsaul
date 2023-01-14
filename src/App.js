@@ -8,7 +8,7 @@ function App() {
         <ChakraProvider>
             <div className="App justify-center place-content-center py-24">
                 <Card className={"h-screen"}></Card>
-                <QueryMoment className={"ml-100"}></QueryMoment>
+                <QueryMoment className={"mx-auto"}></QueryMoment>
             </div>
         </ChakraProvider>
   );
