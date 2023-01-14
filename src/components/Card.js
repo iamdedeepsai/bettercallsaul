@@ -12,11 +12,11 @@ let i = 0;
 function Card() {
     const [waiting, setWaiting] = useState(false);
 
-    const people = ["Mike Ehrmantraut", "Walter White", "Saul Goodman", "Gus Fring"];
+    const people = ["Saul Goodman", "Mike Ehrmantraut", "Walter White", "Gus Fring"];
     const links = [
+        "https://static1.moviewebimages.com/wordpress/wp-content/uploads/photo/ogCzjsnEc8bU1qIOc2wufDH9rLnIX9.jpg?q=50&fit=crop&dpr=1.5",
         "https://static1.moviewebimages.com/wordpress/wp-content/uploads/photo/lLnNUEdGyGVperLSOpvRVMblVSatBt.jpg?q=50&fit=crop&dpr=1.5",
         "https://static1.moviewebimages.com/wordpress/wp-content/uploads/photo/OUQJrSauscBSYNMW0wxAbzW2EQKDnI.jpg?q=50&fit=crop&dpr=1.5",
-        "https://static1.moviewebimages.com/wordpress/wp-content/uploads/photo/ogCzjsnEc8bU1qIOc2wufDH9rLnIX9.jpg?q=50&fit=crop&dpr=1.5",
         "https://static1.moviewebimages.com/wordpress/wp-content/uploads/photo/JvrZ5cXHAtORrPqk4aoablHALgpkpQ.jpg?q=50&fit=crop&dpr=1.5"
     ];
 
