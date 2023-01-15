@@ -9,12 +9,13 @@ const openMic = () => {
     
     if (depr) {
         (async () => {
+            const recorder = await recordAudio();
             if (!started) {
-                const recorder = await recordAudio();
                 recorder.start();
                 started = true;
             } else {
                 started = false;
+                recorder.stop();
             }
         })();
         depr = false

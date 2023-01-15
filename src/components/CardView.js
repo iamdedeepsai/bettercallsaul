@@ -9,7 +9,7 @@ import {useState} from "react";
 
 let i = 0;
 
-function Card() {
+function CardView() {
     const [waiting, setWaiting] = useState(false);
 
     const people = ["Saul Goodman", "Mike Ehrmantraut", "Walter White", "Gus Fring"];
@@ -71,4 +71,4 @@ function Card() {
     );
 }
 
-export default Card;
+export default CardView;
