@@ -5,10 +5,15 @@ const fy = new FakeYou.Client({
     password: '^P0Q64%Z'
 });
 
-fy.start().then(async r => {
-    console.log("started")
-    let model = fy.searchModel('saul goodman').first();
-    const result = await model.request("Hi! Did you know you have rights? Well, the constitution says you do! And so do I. I believe that until proven guilty every man, woman and child in this country are innocent. That's why I fight for you Albuquerque! Better call Saul!");
-    const link = result.audioURL();
-    console.log(link);
-});
+
+const getVoice = (person, text) => {
+    fy.start().then(async r => {
+        let model = fy.searchModel('person').first();
+        const result = await model.request(text);
+        const link = result.audioURL();
+        const audio = new Audio(link);
+        await audio.play().then(() => console.log("Playing sound"));
+    });
+}
+
+export default getVoice;

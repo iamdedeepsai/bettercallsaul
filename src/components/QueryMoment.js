@@ -17,9 +17,8 @@ function QueryMoment() {
 
     sr.onresult = (event) => {
         console.log(event.results[0][0].transcript);
-        console.log(requestText(event.results[0][0].transcript));
+        //console.log(requestText(event.results[0][0].transcript));
         toast.closeAll();
-        console.log("ended");
         setColour("slate-500");
         started = false;
         toast({
