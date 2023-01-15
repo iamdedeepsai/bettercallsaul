@@ -1,11 +1,12 @@
 import "./audioRecorder";
 import {recordAudio} from "./audioRecorder";
+let r = window.webkitSpeechRecognition; 
 
 let depr = true;
 let started = false;
 
 const openMic = () => {
-
+    
     if (depr) {
         (async () => {
             if (!started) {
