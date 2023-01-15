@@ -1,20 +1,38 @@
 import "./QueryMoment.css";
 import openMic from "./Controller/mic"
+import requestText from "./Controller/wolframalpha"
 import MicRoundedIcon from '@mui/icons-material/MicRounded';
 import MicOffRoundedIcon from '@mui/icons-material/MicOffRounded';
 import {useState} from "react";
 import {useToast} from "@chakra-ui/react";
 let started = false;
 
+let sr = new window.webkitSpeechRecognition();
+
+
 function QueryMoment() {
     let [color, setColour] = useState("slate-500");
     let toast = useToast();
+
+    sr.onresult = (event) => {
+        console.log(event.results[0][0].transcript);
+        console.log(requestText(event.results[0][0].transcript));
+        toast.closeAll();
+        console.log("ended");
+        setColour("slate-500");
+        started = false;
+        toast({
+            title: `Mic has stopped recording!`,
+            status: "warning",
+            duration: 1500,
+            icon: <MicOffRoundedIcon/>
+        })
+    }
 
     const clickHandler = () => {
         if (!started) {
             console.log("started");
             setColour("lime-300");
-            openMic();
             started = true;
             toast({
                 title: `Mic is recording!`,
@@ -22,17 +40,8 @@ function QueryMoment() {
                 duration: null,
                 icon: <MicRoundedIcon/>
             })
-        } else {
-            toast.closeAll();
-            console.log("ended");
-            setColour("slate-500");
-            started = false;
-            toast({
-                title: `Mic has stopped recording!`,
-                status: "warning",
-                duration: 1500,
-                icon: <MicOffRoundedIcon/>
-            })
+            sr.start();
+
         }
     }
 
