@@ -12,6 +12,7 @@ function requestText(query){
     fetch("https://api.wolframalpha.com/v1/spoken?i=" + query + '&appid=' + appid)
         .then(res => {
             res.text().then(r => {
+                alert(r);
                 text = r;
             })
         })

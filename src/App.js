@@ -14,7 +14,7 @@ function App() {
 
     return (
         <ChakraProvider>
-            <div className="App justify-center place-content-center py-24 grid grid-cols-2 pl-48">
+            <div className="App justify-center min-h-screen place-content-center py-24 grid grid-cols-2 pl-48">
                 <div>
                     <CardView className={"h-screen"}></CardView>
                     <QueryMoment className={"mx-auto"} onQuery={update}></QueryMoment>
