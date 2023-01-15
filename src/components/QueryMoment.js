@@ -39,14 +39,17 @@ function QueryMoment() {
     }
 
     const submitHandler = () => {
-        let text = requestText(message);
-        alert(text);
+        requestText(message);
     }
+
+    const handleChange = (event) => {
+        setMessage(event.target.value);
+    };
 
     return (
         <div className={"flow-root w-72 justify-center content-center mx-auto"}>
             <div className="inputbox my-6 float-left">
-                <input required="required" type="text" onKeyDown={(event) => {if (event.key === "Enter") submitHandler(event.target.value)}}/>
+                <input value={message} required="required" type="text" onChange={handleChange} onKeyDown={(event) => {if (event.key === "Enter") submitHandler(message)}}/>
                 <span>Ask away!</span>
                 <i></i>
             </div>

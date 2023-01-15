@@ -1,11 +1,15 @@
-const  appid = "H4L68G-75H7XKWLU2";
+const appid = "H4L68G-75H7XKWLU2";
 
-function requestText(query){
+function requestText(query) {
     query = encodeURIComponent(query)
     let text;
     fetch("https://api.wolframalpha.com/v1/spoken?i=" + query + '&appid=' + appid)
-        .then(res => {res.text().then(r => text = r)});
-    return text;
+        .then(res => {
+            res.text().then(r => {
+                alert(r);
+                return r;
+            })
+        });
 }
 
 export default requestText;
