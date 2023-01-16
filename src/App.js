@@ -8,8 +8,8 @@ import {useState} from "react";
 function App() {
     const [chats, setChats] = useState([]);
 
-    const update = (text) => {
-        setChats([...chats, text])
+    const update = (qn, res) => {
+        setChats([...chats, [qn, res]])
     }
 
     return (
@@ -19,8 +19,8 @@ function App() {
                     <CardView className={"h-screen"}></CardView>
                     <QueryMoment className={"mx-auto"} onQuery={update}></QueryMoment>
                 </div>
-                <div className={"w-7/12 bg-slate-700 rounded-xl drop-shadow-lg overflow-hidden p-4"}>
-                    <ChatLog className={"h-full"} chats={chats}></ChatLog>
+                <div className={"w-7/12 bg-slate-700 rounded-xl drop-shadow-lg p-4 overflow-y-scroll"} style={{maxHeight: 600, height: 600}}>
+                    <ChatLog className={""} chats={chats}></ChatLog>
                 </div>
             </div>
         </ChakraProvider>

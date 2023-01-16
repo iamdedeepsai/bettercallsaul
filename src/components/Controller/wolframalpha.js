@@ -6,17 +6,17 @@ const fy = new FakeYou.Client({
 const appid = "H4L68G-75H7XKWLU2";
 
 
-function requestText(query){
+async function requestText(query){
     query = encodeURIComponent(query)
-    let text = "";
-    fetch("https://api.wolframalpha.com/v1/spoken?i=" + query + '&appid=' + appid)
-        .then(res => {
-            res.text().then(r => {
-                alert(r);
-                text = r;
+    let getText = new Promise((resolve) => {
+        fetch("https://api.wolframalpha.com/v1/spoken?i=" + query + '&appid=' + appid)
+            .then(async res => {
+                await res.text().then(r => {
+                    resolve(r);
+                })
             })
-        })
-    if (text != "") return text;
+    });
+    return (await getText);
 }
 
 export default requestText;

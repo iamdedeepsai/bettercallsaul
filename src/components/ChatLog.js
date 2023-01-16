@@ -9,7 +9,10 @@ function ChatLog(props) {
             {props.chats.map(el => (
                 <Card className={"mb-3"}>
                     <CardBody className={"rounded-lg"}>
-                        <Text>{el}</Text>
+                        <Text>{el[1]}</Text>
+                    </CardBody>
+                    <CardBody>
+                        <Text>{el[0]}</Text>
                     </CardBody>
                 </Card>
             ))}

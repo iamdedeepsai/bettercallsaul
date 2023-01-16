@@ -44,9 +44,12 @@ function QueryMoment(props) {
         }
     }
 
+    const updateState = (text) => {
+        props.onQuery();
+    }
+
     const submitHandler = () => {
-        props.onQuery(message);
-        requestText(message);
+        requestText(message).then(r => props.onQuery(r, message));
     }
 
     const handleChange = (event) => {
